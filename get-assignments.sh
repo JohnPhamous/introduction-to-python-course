@@ -24,7 +24,7 @@ do
 
 	# see if assignment exists
 	# supress output of ls
-	ls ${homeDir}/turnin/*1.ipynb  2>/dev/null 1>/dev/null
+	ls ${homeDir}/turnin/*${assignmentName}.ipynb 
 
 	# checks to see if the notebook exists
 	if [ $? -eq 0 ]
@@ -32,14 +32,14 @@ do
 		echo ${student}: TURN IN >> ${reportPath}.txt
 		printf "$currentDate ${currentTime}," >> ${reportPath}.csv
 
-		assignment=${homeDir}/turnin/*1.ipynb
+		assignment=${homeDir}/turnin/*${assignmentName}.ipynb
 		printf "${assignment}," >> ${reportPath}.csv
 		printf "false,,,\n" >> ${reportPath}.csv
 
 		cp $assignment turnin/${folderName}
 	else
 		echo ${student}: !!!=== NOT TURNED IN ===!!! >> ${reportPath}.txt
-		printf ",true,,,\n" >> ${reportPath}.csv
+		printf ",,true,,\n" >> ${reportPath}.csv
 	fi
 done
 

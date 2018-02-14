@@ -1,0 +1,21 @@
+body {
+    background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+}
+h1 {
+    color: white !important;
+}
+.reveal p {
+    color: white;
+}
+.reveal ul, ol {
+    color: white;
+}
+div.output_area pre {
+    color: white;
+}
+div.output_stderr {
+    background: #F00;
+}
+.reveal table th, .reveal table td {
+    color: white;
+}
